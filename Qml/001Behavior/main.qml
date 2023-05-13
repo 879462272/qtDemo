@@ -17,13 +17,23 @@ Window {
  height: parent.height
  clip:true
 
+ radius: 10
   //速度慢到1K Behavior 动画
   Behavior on width {  NumberAnimation{duration: 400}}
  }
 
  MouseArea{
  anchors.fill: parent
- onClicked: rect.width50
+ onClicked: {
+   rect.width50
+
+   root.falg?rect.width=50:rect.width=400;
+   root.falg=!root.falg
+
+    console.log("123",falg)
+   // mouse.accepted=false
+ }
+
  }
 
  Rectangle{
@@ -39,8 +49,12 @@ Window {
 
    MouseArea{
    anchors.fill: parent
-   onClicked:{ root.falg?rect.width=400:rect.width=50;root.falg=!root.falg}
-   }
+   onClicked:{
+     root.falg?rect.width=50:rect.width=400;
+     root.falg=!root.falg
+     console.log("456",root.falg)
 
+   }
+  }
  }
 }
