@@ -21,3 +21,7 @@ MOC_DIR += ./temp/moc
 RCC_DIR += ./temp/rcc
 UI_DIR += ./temp/ui
 OBJECTS_DIR += ./temp/obj
+
+
+
+

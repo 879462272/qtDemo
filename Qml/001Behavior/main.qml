@@ -9,10 +9,11 @@ Window {
   height: 480
   title: qsTr("Model")
   property var falg: true
+
  Rectangle{
 
  id:rect
- width:400
+ width:100
  color:"gray"
  height: parent.height
  clip:true
@@ -27,20 +28,17 @@ Window {
  onClicked: {
    rect.width50
 
-   root.falg?rect.width=50:rect.width=400;
+   root.falg?rect.width=3:rect.width=100;
    root.falg=!root.falg
 
-    console.log("123",falg)
-   // mouse.accepted=false
  }
-
- }
+}
 
  Rectangle{
 
    //opacity: 0
    width: 40;height: 40;
-   clip: true
+  // clip: true
    radius: 20
    color: "white"
    anchors.verticalCenter:rect.verticalCenter
@@ -50,11 +48,26 @@ Window {
    MouseArea{
    anchors.fill: parent
    onClicked:{
-     root.falg?rect.width=50:rect.width=400;
+     root.falg?rect.width=3:rect.width=100;
      root.falg=!root.falg
      console.log("456",root.falg)
 
    }
   }
+   Rectangle{
+   width: 35;height: 35;
+   radius: 17
+   color: "#00AAAA"
+   anchors.centerIn: parent
+
+   Image {
+      anchors.fill: parent
+      anchors.margins: 5
+      antialiasing: true
+      source:  root.falg?"qrc:/image/LeftIcon.png":"qrc:/image/RightIcon.png"
+   }
+  }
  }
+
+
 }
