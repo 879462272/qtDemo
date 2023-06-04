@@ -75,6 +75,7 @@ Window {
     MouseArea {
       anchors.fill: parent
       onClicked: {
+
         root.falg ? rect.width = 0 : rect.width = 100
         root.falg = !root.falg
         console.log("456", root.falg)
